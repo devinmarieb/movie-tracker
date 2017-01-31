@@ -5,6 +5,15 @@ export default class App extends Component {
     super();
   }
 
+  componentDidMount() {
+    const movieDatabase = ('https://api.themoviedb.org/3/movie/550?api_key=1d0514b501ec10b990725f0f8f54ce01')
+    fetch(movieDatabase).then((response) => {
+      return response.json();
+    }).then((response) => {
+      console.log(response);
+    })
+  }
+
   render() {
     return (
       <div>
